@@ -1,0 +1,38 @@
+{
+  "name": "dcodegroup/seo-settings",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Dcodegroup\\SeoSettings\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ferenc Horvath",
+      "email": "ferenc@dcodegroup.com"
+    },
+    {
+      "name": "Dcode Group",
+      "email": "forge@dcodegroup.com",
+      "homepage": "https://dcodegroup.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.18",
+    "laravel/pint": "^1.4"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dcodegroup\\SeoSettings\\SeoSettingsServiceProvider"
+      ],
+      "aliases": {
+        "Seo": "Dcodegroup\\SeoSettings\\Facades\\Seo"
+      }
+    }
+  }
+}
