@@ -16,11 +16,7 @@ class SeoSettingSeeder extends Seeder
     {
         $defaults = [
             [
-                'tag' => 'meta',
-                'attributes' => [
-                    'name' => 'author',
-                    'content' => ''
-                ],
+                //
             ]
         ];
 

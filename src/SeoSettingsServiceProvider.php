@@ -2,6 +2,7 @@
 
 namespace Dcodegroup\SeoSettings;
 
+use Dcodegroup\SeoSettings\Http\Controllers\Admin\SeoDataController;
 use Dcodegroup\SeoSettings\Http\Controllers\Admin\SeoSettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -52,6 +53,9 @@ class SeoSettingsServiceProvider extends ServiceProvider
                 ->group(function () {
                     Route::resource('seo-settings', SeoSettingController::class)->except('show');
                 });
+
+            Route::get('/seo-data/{modelClass}/{modelId}', [SeoDataController::class, 'get']);
+            Route::post('/seo-data/{modelClass}/{modelId}', [SeoDataController::class, 'save']);
         });
     }
 
