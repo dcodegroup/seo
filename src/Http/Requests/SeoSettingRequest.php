@@ -13,6 +13,10 @@ class SeoSettingRequest extends FormRequest
                 'required',
                 'max:255',
             ],
+            'group' => [
+                'sometimes',
+                'max:255',
+            ],
             'attributes' => [
                 'required',
                 'array',

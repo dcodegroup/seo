@@ -2,43 +2,43 @@
   <div v-if="open">
     <div class="form-row">
       <label for="title">Title</label>
-      <input type="text" v-model="model?.title" id="title">
+      <input type="text" v-model="model.title" id="title">
     </div>
     <div class="form-row">
       <label for="description">Description</label>
-      <textarea v-model="model?.description" id="description" rows="5"></textarea>
+      <textarea v-model="model.description" id="description" rows="5"></textarea>
     </div>
     <div class="form-row">
       <label for="keywords">Keywords</label>
-      <textarea v-model="model?.keywords" id="keywords" rows="2"></textarea>
+      <textarea v-model="model.keywords" id="keywords" rows="2"></textarea>
     </div>
     <div class="form-row">
       <label for="image">Image URL</label>
-      <input type="text" v-model="model?.image" id="image">
+      <input type="text" v-model="model.image" id="image">
     </div>
     <div class="form-row">
       <label for="author">Author</label>
-      <input type="text" v-model="model?.author" id="author">
+      <input type="text" v-model="model.author" id="author">
     </div>
     <div class="form-row">
       <label for="copyright">Copyright</label>
-      <input type="text" v-model="model?.copyright" id="copyright">
+      <input type="text" v-model="model.copyright" id="copyright">
     </div>
     <div class="form-row">
       <label for="date">Date</label>
-      <input type="text" v-model="model?.date" id="date">
+      <input type="text" v-model="model.date" id="date">
     </div>
     <div class="form-row">
       <label for="region">Region</label>
-      <input type="text" v-model="model?.region" id="region">
+      <input type="text" v-model="model.region" id="region">
     </div>
     <div class="form-row">
       <label for="url">URL</label>
-      <input type="text" v-model="model?.url" id="url">
+      <input type="text" v-model="model.url" id="url">
     </div>
     <div class="form-row">
       <label for="markup">Markup</label>
-      <textarea v-model="model?.markup" id="markup" rows="5"></textarea>
+      <textarea v-model="model.markup" id="markup" rows="5"></textarea>
     </div>
     <button type="button" @click="open = false">
       Close
@@ -64,7 +64,7 @@ export default {
   },
   data() {
     return {
-      model: null,
+      model: {},
       open: false,
       modelClass: null,
       modelId: null,

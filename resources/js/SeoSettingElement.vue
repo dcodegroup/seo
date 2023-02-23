@@ -14,6 +14,10 @@
         <input type="text" v-model="setting.tag" name="tag" id="tag">
       </div>
       <div class="form-row">
+        <label for="tag">Group:</label>
+        <input type="text" v-model="setting.group" name="group" id="group">
+      </div>
+      <div class="form-row">
         <button @click="addAttribute" class="btn btn-primary" type="button">Add attribute</button><br>
         <label for="attributes">Attributes:</label>
         <div class="attribute" v-for="(attribute, index) in attributes">
