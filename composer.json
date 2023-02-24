@@ -1,5 +1,5 @@
 {
-  "name": "dcodegroup/seo-settings",
+  "name": "dcodegroup/seo",
   "type": "library",
   "license": "MIT",
   "autoload": {
