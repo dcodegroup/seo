@@ -2,6 +2,9 @@
     <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.create')) }}" class="btn btn-primary">
         Add
     </a>
+    <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.clear-cache')) }}" class="btn btn-primary">
+        Clear Cache
+    </a>
     @foreach($settings as $key => $group)
         <h2>
             {{ \Illuminate\Support\Str::ucfirst($key) }} tags:

@@ -4,6 +4,7 @@ namespace Dcodegroup\SeoSettings;
 
 use Dcodegroup\SeoSettings\Http\Controllers\Admin\SeoDataController;
 use Dcodegroup\SeoSettings\Http\Controllers\Admin\SeoSettingController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -52,10 +53,11 @@ class SeoSettingsServiceProvider extends ServiceProvider
                 ->middleware(config('seo-settings.routing.admin.middlewares'))
                 ->group(function () {
                     Route::resource('seo-settings', SeoSettingController::class)->except('show');
+                    Route::get('seo-settings/clear-cache', [SeoSettingController::class, 'clearCache'])->name('seo-settings.clear-cache');
                 });
 
-            Route::get('/seo-data/{modelClass}/{modelId}', [SeoDataController::class, 'get']);
-            Route::post('/seo-data/{modelClass}/{modelId}', [SeoDataController::class, 'save']);
+            Route::get('/admin/seo-data', [SeoDataController::class, 'get']);
+            Route::post('/admin/seo-data', [SeoDataController::class, 'save'])->withoutMiddleware(VerifyCsrfToken::class);
         });
     }
 

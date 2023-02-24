@@ -10,7 +10,7 @@ class SeoData extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'seo_settings';
+    protected $table = 'seo_data';
 
     protected $guarded = ['id'];
 

@@ -83,7 +83,10 @@ export default {
     async getModel()
     {
       try {
-        const response = await axios.get('/seo-data/'+this.modelClass+'/'+this.modelId);
+        let url = new URL(window.location.origin+'/admin/seo-data');
+        url.searchParams.append('modelClass', this.modelClass);
+        url.searchParams.append('modelId', this.modelId);
+        const response = await axios.get(url);
 
         this.model = response.data.model;
       } catch (e) {
@@ -92,10 +95,14 @@ export default {
     },
     async save()
     {
-      try {
-        const response = await axios.post('/seo-data/'+this.modelClass+'/'+this.modelId, this.model)
+      let url = new URL(window.location.origin+'/admin/seo-data');
+      url.searchParams.append('modelClass', this.modelClass);
+      url.searchParams.append('modelId', this.modelId);
 
-        this.open = false;
+      try {
+        const response = await axios.post(url, this.model)
+
+        // this.open = false;
       } catch (e) {
         console.error(e);
       }

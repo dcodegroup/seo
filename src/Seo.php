@@ -28,12 +28,12 @@ class Seo
 
     }
 
-    public function getModelMeta(Model $model): Collection
+    public function getModelMeta(Model $model): SeoData
     {
         return SeoData::query()
             ->where('seoable_id', $model->id)
             ->where('seoable_type', get_class($model))
-            ->get();
+            ->first();
     }
 
     public function getModelMetaView(Model $model): View

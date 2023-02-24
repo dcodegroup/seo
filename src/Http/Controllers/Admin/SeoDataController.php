@@ -20,11 +20,11 @@ class SeoDataController extends Controller
         ]);
     }
 
-    public function save(SeoDataRequest $request, string $modelClass, int $modelId): JsonResponse
+    public function save(SeoDataRequest $request): JsonResponse
     {
-        SeoData::query()->firstOrCreate([
-            'seoable_type' => $modelClass,
-            'seoable_id' => $modelId,
+        SeoData::query()->updateOrCreate([
+            'seoable_type' => $request->query('modelClass'),
+            'seoable_id' => $request->query('modelId'),
         ], $request->validated());
 
         return response()->json();
