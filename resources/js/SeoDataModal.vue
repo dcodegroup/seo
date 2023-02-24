@@ -1,51 +1,60 @@
 <template>
   <div v-if="open">
-    <div class="form-row">
-      <label for="title">Title</label>
-      <input type="text" v-model="model.title" id="title">
+    <div class="fixed top-0 left-0 h-full w-full flex content-center justify-center bg-neutral-300/50">
+      <div class="w-1/2 p-8 overflow-y-scroll bg-white max-h-96 self-center rounded">
+        <h2 class="my-4">
+          SEO
+        </h2>
+        <div class="flex flex-wrap my-4">
+          <label for="title" class="w-full my-2">Title</label>
+          <input type="text" v-model="model.title" id="title" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="description" class="w-full my-2">Description</label>
+          <textarea v-model="model.description" id="description" rows="5" class="w-full rounded"></textarea>
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="keywords" class="w-full my-2">Keywords</label>
+          <textarea v-model="model.keywords" id="keywords" rows="2" class="w-full rounded"></textarea>
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="image" class="w-full my-2">Image URL</label>
+          <input type="text" v-model="model.image" id="image" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="author" class="w-full my-2">Author</label>
+          <input type="text" v-model="model.author" id="author" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="copyright" class="w-full my-2">Copyright</label>
+          <input type="text" v-model="model.copyright" id="copyright" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="date" class="w-full my-2">Date</label>
+          <input type="text" v-model="model.date" id="date" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="region" class="w-full my-2">Region</label>
+          <input type="text" v-model="model.region" id="region" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="url" class="w-full my-2">URL</label>
+          <input type="text" v-model="model.url" id="url" class="w-full rounded">
+        </div>
+        <div class="flex flex-wrap my-4">
+          <label for="markup" class="w-full my-2">Markup</label>
+          <textarea v-model="model.markup" id="markup" rows="5" class="w-full rounded"></textarea>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" @click="open = false">
+            Close
+          </button>
+          <button class="btn btn-primary" type="button" @click="save">
+            Save
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="form-row">
-      <label for="description">Description</label>
-      <textarea v-model="model.description" id="description" rows="5"></textarea>
-    </div>
-    <div class="form-row">
-      <label for="keywords">Keywords</label>
-      <textarea v-model="model.keywords" id="keywords" rows="2"></textarea>
-    </div>
-    <div class="form-row">
-      <label for="image">Image URL</label>
-      <input type="text" v-model="model.image" id="image">
-    </div>
-    <div class="form-row">
-      <label for="author">Author</label>
-      <input type="text" v-model="model.author" id="author">
-    </div>
-    <div class="form-row">
-      <label for="copyright">Copyright</label>
-      <input type="text" v-model="model.copyright" id="copyright">
-    </div>
-    <div class="form-row">
-      <label for="date">Date</label>
-      <input type="text" v-model="model.date" id="date">
-    </div>
-    <div class="form-row">
-      <label for="region">Region</label>
-      <input type="text" v-model="model.region" id="region">
-    </div>
-    <div class="form-row">
-      <label for="url">URL</label>
-      <input type="text" v-model="model.url" id="url">
-    </div>
-    <div class="form-row">
-      <label for="markup">Markup</label>
-      <textarea v-model="model.markup" id="markup" rows="5"></textarea>
-    </div>
-    <button type="button" @click="open = false">
-      Close
-    </button>
-    <button class="btn btn-primary" type="button" @click="save">
-      Save
-    </button>
   </div>
 </template>
 <script>
