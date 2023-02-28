@@ -88,7 +88,9 @@ export default {
         url.searchParams.append('modelId', this.modelId);
         const response = await axios.get(url);
 
-        this.model = response.data.model;
+        if (response.data.model) {
+          this.model = response.data.model;
+        }
       } catch (e) {
         console.error(e);
       }
