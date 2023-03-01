@@ -28,7 +28,7 @@ class Seo
 
     }
 
-    public function getModelMeta(Model $model): SeoData
+    public function getModelMeta(Model $model): ?SeoData
     {
         return SeoData::query()
             ->where('seoable_id', $model->id)
