@@ -2,9 +2,11 @@
 $action = $setting->exists ? route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.update')) : route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.store'));
 @endphp
 <x-page-builder::layouts.admin>
-    <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.index')) }}" class="btn btn-primary">
-        Back
-    </a>
+    <div class="my-8">
+        <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.index')) }}" class="btn btn-primary">
+            Back
+        </a>
+    </div>
     <form action="{{ $action }}" method="post">
         @csrf
         @if($setting->exists)

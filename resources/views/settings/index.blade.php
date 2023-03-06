@@ -1,12 +1,14 @@
 <x-page-builder::layouts.admin>
-    <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.create')) }}" class="btn btn-primary">
-        Add
-    </a>
-    <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.clear-cache')) }}" class="btn btn-primary">
-        Clear Cache
-    </a>
+    <div class="flex justify-between my-4">
+        <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.create')) }}" class="btn btn-primary">
+            Add
+        </a>
+        <a href="{{ route(\Dcodegroup\SeoSettings\Routes::admin('seo-settings.clear-cache')) }}" class="btn btn-primary">
+            Clear Cache
+        </a>
+    </div>
     @foreach($settings as $key => $group)
-        <h2>
+        <h2 class="mb-4">
             {{ \Illuminate\Support\Str::ucfirst($key) }} tags:
         </h2>
         @foreach($group as $setting)
