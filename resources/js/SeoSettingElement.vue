@@ -2,7 +2,7 @@
   <div class="my-4">
     <div class="cursor-pointer" v-if="setting" @click="open = !open">
       <span v-html="'<'"></span>
-      {{ setting.tag ?? 'ADD TAG' }}
+      {{ setting.tag ? setting.tag : 'ADD TAG' }}
       <span v-for="attribute in attributes">
         {{ attribute.key }}="{{ attribute.value }}"
       </span>
@@ -60,8 +60,8 @@ export default {
   },
   data() {
     return {
-      setting: this.defaultSetting ?? {},
-      attributes: this.defaultSetting.attributes ?? [],
+      setting: this.defaultSetting ? this.defaultSetting : {},
+      attributes: this.defaultSetting.attributes ? this.defaultSetting.attributes : [],
       open: false,
     }
   },
