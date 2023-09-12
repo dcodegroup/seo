@@ -1,0 +1,137 @@
+
+.seo-module * {
+	--border-radius: 4px;
+	--color-wrapper: rgba(0, 0, 0, 0.5);
+	--color-white: #FFFFFF;
+	--color-black: #000000;
+	--seo-font: Arial, Helvetica, sans-serif;
+	--seo-transition: all 0.25s ease-in-out;
+	
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+	/* input wrappers */
+	.seo-module-input-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 1rem 0;
+	}
+
+	.seo-module-input-wrapper-flex {
+		display: flex;
+		margin-bottom: 1rem;
+	}
+	
+	.seo-module-input-wrapper-flex .seo-module-input {
+		margin-right: 1rem !important;
+	}
+
+	/* label and input */
+	.seo-module .seo-module-input,
+	.seo-module .seo-module-label {
+		width: 100%;
+		display: block;
+		font-family: var(--seo-font);
+		font-size: 1rem;
+		color: var(--color-black);
+		font-weight: normal;
+		line-height: normal;
+	}
+	
+	.seo-module .seo-module-label {
+		margin-bottom: 1rem;
+	}
+ 	
+	.seo-module .seo-module-input {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--color-black);
+		border-radius: var(--border-radius);
+		background-color: var(--color-white);
+		transition: var(--seo-transition);
+		appearance: none;
+		min-height: 2.5rem;
+		margin: 0;
+	}
+	
+	/* buttons */
+	.seo-module .seo-btn {
+		display: block;
+		height: 2.5rem;
+		padding: 0 1rem;
+		border: 1px solid var(--color-black);
+		border-radius: var(--border-radius);
+		background-color: var(--color-white);
+		cursor: pointer;
+		transition: var(--seo-transition);
+	}
+
+	.seo-module .seo-btn-primary {
+		background: var(--color-black);
+		color: var(--color-white);
+	}
+
+	.seo-module .seo-btn-primary:hover { 
+		background: var(--color-white);
+		color: var(--color-black);
+	}
+
+	.seo-module .seo-btn-secondary:hover { 
+		background: var(--color-black);
+		color: var(--color-white);
+	}
+
+
+/* seo modal */
+.seo-modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-wrapper);
+}
+
+.seo-modal-content {
+	position: relative;
+	align-self: center;
+	width: 50%;
+	overflow-y: auto;
+	background-color: var(--color-white);
+	border-radius: var(--border-radius);
+	max-height: calc(100vh - 200px);
+	padding: 2rem 2rem 0 2rem;
+}
+
+	.seo-modal-header {
+		margin-bottom: 2rem;
+	}
+
+	.seo-modal-footer {
+		position: sticky;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 1rem 0;
+		background: white;
+		border-top: 1px solid var(--color-black);
+	}
+
+/* seo-settings */
+.seo-settings {
+	margin-bottom: 2rem;
+}
+
+.seo-settings-wrapper {
+	width: 33.3333%;
+}
+
+.seo-settings-button {
+	cursor: pointer;
+}
+  
